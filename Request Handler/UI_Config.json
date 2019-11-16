@@ -1,0 +1,181 @@
+{
+	"output_file": "settings.json",
+	"OnlyLive": {
+		"type": "checkbox",
+		"value": false,
+		"label": "Only when live",
+		"tooltip": "Command is only active when stream is live",
+		"group": "General"
+	},
+	"Command1": {
+		"type": "textbox",
+		"value": "!tr",
+		"label": "Request Command",
+		"tooltip": "The command to submit a request. <!command> <request>",
+		"group": "Commands (Request)"
+	},
+	"CommandCost": {
+		"type": "numberbox",
+		"label": " Command Cost (Currency)",
+		"value": 0,
+		"tooltip": "CommandCost to User",
+		"group": "Commands (Request)"
+	},
+	"Command2": {
+		"type": "textbox",
+		"value": "!next5",
+		"label": "Next Five requests in queue",
+		"tooltip": "The command to show next 5. <!command>",
+		"group": "Commands (Other)"
+	},
+	"Command3": {
+		"type": "textbox",
+		"value": "!played",
+		"label": "Remove First in queue",
+		"tooltip": "Remove Played or first in queue! <!command>",
+		"group": "Commands (Other)"
+	},
+	"Command4": {
+		"type": "textbox",
+		"value": "!removetank",
+		"label": "Remove Specific Request",
+		"tooltip": "The command to remove specific request <!command> <position>",
+		"group": "Commands (Other)"
+	},
+	"BaseResponse": {
+		"type": "textbox",
+		"value": "{0} {1} has requested {2}, {2} has been added to the queue!",
+		"label": "Base response to tank request from user.",
+		"tooltip": "{0} = Rank \r\n {1} = User \r\n {2} = Request",
+		"group": "Responses (All Modes)"
+	},
+	"NextFive": {
+		"type": "textbox",
+		"value": "There is {0} tank/s in the queue.",
+		"label": "Queue Length Response",
+		"tooltip": "{0}, = place holder for list length.",
+		"group": "Responses (All Modes)"
+	},
+	"ErrorResponse": {
+		"type": "textbox",
+		"value": "Sorry! {0} {1} The requested {2} has been denied by HQ! Please Check the request and try again!",
+		"label": "Error response to tank request from user.",
+		"tooltip": "{0} = Rank \r\n {1} = User \r\n {2} = request",
+		"group": "Responses (All Modes)"
+	},
+	"NotEnoughResponse": {
+		"type": "textbox",
+		"value": "{0} {1} you do not have enough {2} to request {3}! Gain some more {2} and try again!",
+		"label": "Not Enough Response",
+		"tooltip": "Message sent when user tries to make a request without enough points \r\n {0} = rank \r\n {1} = user \r\n {2} = Currency name \r\n {3} = tank",
+		"group": "Responses (All Modes)"
+	},
+	"InfoResponse": {
+		"type": "textbox",
+		"value": "To submit your tank request for approval please use !tr <tank>",
+		"label": "Info response",
+		"tooltip": "Message sent when user doesn't request a tank properly",
+		"group": "Responses (All Modes)"
+	},
+	"PermissionResp": {
+		"type": "textbox",
+		"value": "$user -> only $permission ($permissioninfo) and higher can use this command",
+		"label": "Permission denied response",
+		"tooltip": "Message sent when user doesn't have the correct permission level \r\n {0} = user \r\n {1} = permission\r\n {2} = permission info",
+		"group": "Responses (All Modes)"
+	},
+	"Permission": {
+		"type": "dropdown",
+		"value": "everyone",
+		"items": [
+			"everyone",
+			"moderator",
+			"subscriber",
+			"user_specific",
+			"editor"
+		],
+		"label": "Permission",
+		"tooltip": "Who is able to use the command",
+		"group": "Permissions"
+	},
+	"PermissionInfo": {
+		"type": "textbox",
+		"value": "",
+		"label": "Permission level info",
+		"tooltip": "Set the user, rank or tier for permission",
+		"group": "Permissions"
+	},
+	"Usage": {
+		"type": "dropdown",
+		"value": "Stream Chat",
+		"items": [
+			"Stream Chat",
+			"Stream Whisper",
+			"Stream Both",
+			"Discord Chat",
+			"Discord Whisper",
+			"Discord Both",
+			"Chat Both",
+			"Whisper Both",
+			"All"
+		],
+		"label": "Usage",
+		"tooltip": "Usage for where the script can be used!",
+		"group": "General"
+	},
+	"Cooldown": {
+		"type": "slider",
+		"value": 4,
+		"min": 1,
+		"max": 100,
+		"ticks": 1,
+		"label": "Cooldown (seconds)",
+		"tooltip": "How long the command should go on cooldown for!",
+		"group": "Cooldown (All Modes)"
+	},
+	"UserCooldown": {
+		"type": "numberbox",
+		"label": " User Cooldown (seconds)",
+		"value": 10,
+		"tooltip": "User cooldown in seconds.",
+		"group": "Cooldown (All Modes)"
+	},
+	"UseCD": {
+		"type": "checkbox",
+		"value": false,
+		"label": "Use Cooldown Messages",
+		"tooltip": "Enable/Disable cooldown messages",
+		"group": "Cooldown (All Modes)"
+	},
+	"OnUserCooldown": {
+		"type": "textbox",
+		"value": "{0} the command is still on cooldown for {1} seconds!",
+		"label": "User Cooldown Response",
+		"tooltip": "The message that the bot will display when the command is on user cooldown. \r\n {0} = user \r\n {1} = time remaining",
+		"group": "Cooldown (All Modes)"
+	},
+	"TankReqDefaults": {
+		"type": "button",
+		"label": "Restore Default Settings",
+		"tooltip": "Reset settings back to defaults \r\n Reload Scripts afterwards to see the changes in UI!",
+		"function": "SetDefaults",
+		"wsevent": "",
+		"group": "Help"
+	},
+	"OpenREADME": {
+		"type": "button",
+		"label": "Open README.txt",
+		"tooltip": "Opens file: README.txt",
+		"function": "OpenReadMe",
+		"wsevent": "",
+		"group": "Help"
+	},
+	"ReportBug": {
+		"type": "button",
+		"label": "Report a Bug",
+		"tooltip": "Opens a report form in your default browser",
+		"function": "ReportBug",
+		"wsevent": "",
+		"group": "Help"
+	}
+}
